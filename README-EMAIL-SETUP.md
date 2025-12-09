@@ -79,3 +79,5 @@ This will:
 - **Local dev not working**: Make sure Netlify CLI is installed and running `netlify dev`
 - **Gmail blocking**: Make sure 2-Step Verification is enabled and you're using an App Password
 
+
+
