@@ -21,20 +21,16 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formspreeId = import.meta.env.VITE_FORMSPREE_FORM_ID;
-    const customEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT;
-    const endpoint = customEndpoint ?? (formspreeId ? `https://formspree.io/f/${formspreeId}` : null);
-
-    if (!endpoint) {
-      toast({
-        title: "Form not configured",
-        description: "Add VITE_FORMSPREE_FORM_ID or VITE_CONTACT_ENDPOINT in .env",
-      });
-      return;
-    }
+    
+    // Use local Express server for dev, Netlify function for production
+    const isDev = import.meta.env.DEV;
+    const endpoint = isDev 
+      ? "http://localhost:3001/api/send-email"
+      : "/.netlify/functions/send-email";
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    
     const payload = {
       firstName: (formData.get("firstName") as string) ?? "",
       lastName: (formData.get("lastName") as string) ?? "",
@@ -42,7 +38,6 @@ const Contact = () => {
       company: (formData.get("company") as string) ?? "",
       phone: (formData.get("phone") as string) ?? "",
       message: (formData.get("message") as string) ?? "",
-      _subject: "New contact form submission",
       _honeypot: (formData.get("_honeypot") as string) ?? "",
     };
 
@@ -57,24 +52,25 @@ const Contact = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify(payload),
       });
 
       if (!res.ok) {
-        throw new Error(`Request failed with ${res.status}`);
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.message || `Request failed with ${res.status}`);
       }
 
       toast({
-        title: "Message sent",
-        description: "Thanks! We'll get back to you within 24 hours.",
+        title: "Message sent!",
+        description: "We've received your message and sent you a confirmation email.",
       });
       form.reset();
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Form submission error:", error);
       toast({
         title: "Message failed",
-        description: "Please try again, or email hello@finaccoutsourcing.com.",
+        description: error.message || "Please try again, or email hello@finaccoutsourcing.com.",
       });
     } finally {
       setIsSubmitting(false);

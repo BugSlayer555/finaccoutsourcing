@@ -32,7 +32,7 @@ export function HeroSection() {
 
             <AnimatedSection delay={0.1}>
               <h1 className="heading-xl text-foreground">
-                Outsourcing Accounting —{" "}
+                Outsourcing Accounting -{" "}
                 <span className="text-primary">An Extension of Your Office</span>
               </h1>
             </AnimatedSection>
