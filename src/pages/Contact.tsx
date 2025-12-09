@@ -21,18 +21,64 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formspreeId = import.meta.env.VITE_FORMSPREE_FORM_ID;
+    const customEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT;
+    const endpoint = customEndpoint ?? (formspreeId ? `https://formspree.io/f/${formspreeId}` : null);
+
+    if (!endpoint) {
+      toast({
+        title: "Form not configured",
+        description: "Add VITE_FORMSPREE_FORM_ID or VITE_CONTACT_ENDPOINT in .env",
+      });
+      return;
+    }
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      firstName: (formData.get("firstName") as string) ?? "",
+      lastName: (formData.get("lastName") as string) ?? "",
+      email: (formData.get("email") as string) ?? "",
+      company: (formData.get("company") as string) ?? "",
+      phone: (formData.get("phone") as string) ?? "",
+      message: (formData.get("message") as string) ?? "",
+      _subject: "New contact form submission",
+      _honeypot: (formData.get("_honeypot") as string) ?? "",
+    };
+
+    // Simple spam guard: abort if honeypot filled
+    if (payload._honeypot) {
+      return;
+    }
+
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Request failed with ${res.status}`);
+      }
+
+      toast({
+        title: "Message sent",
+        description: "Thanks! We'll get back to you within 24 hours.",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Message failed",
+        description: "Please try again, or email hello@finaccoutsourcing.com.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -70,6 +116,7 @@ const Contact = () => {
                       <Label htmlFor="firstName">First Name</Label>
                       <Input
                         id="firstName"
+                        name="firstName"
                         placeholder="John"
                         required
                         className="bg-background"
@@ -79,6 +126,7 @@ const Contact = () => {
                       <Label htmlFor="lastName">Last Name</Label>
                       <Input
                         id="lastName"
+                        name="lastName"
                         placeholder="Doe"
                         required
                         className="bg-background"
@@ -90,6 +138,7 @@ const Contact = () => {
                     <Label htmlFor="email">Email</Label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="john@example.com"
                       required
@@ -101,6 +150,7 @@ const Contact = () => {
                     <Label htmlFor="company">Company Name</Label>
                     <Input
                       id="company"
+                      name="company"
                       placeholder="Your Accounting Firm"
                       className="bg-background"
                     />
@@ -110,6 +160,7 @@ const Contact = () => {
                     <Label htmlFor="phone">Phone Number</Label>
                     <Input
                       id="phone"
+                      name="phone"
                       type="tel"
                       placeholder="+44 20 1234 5678"
                       className="bg-background"
@@ -120,12 +171,22 @@ const Contact = () => {
                     <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Tell us about your requirements..."
                       rows={5}
                       required
                       className="bg-background resize-none"
                     />
                   </div>
+
+                  {/* Honeypot field to catch bots */}
+                  <Input
+                    type="text"
+                    name="_honeypot"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
 
                   <Button
                     type="submit"
