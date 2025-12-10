@@ -1,6 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
+import { Link } from "react-router-dom";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/animated-section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Target, Eye, Heart, Users } from "@phosphor-icons/react";
 
 const values = [
@@ -47,7 +49,7 @@ const About = () => {
               An Extension of Your Office
             </h1>
             <p className="text-xl text-muted-foreground font-light leading-relaxed">
-              FinAcc is more than just a company or business; it's a family and an emotion. 
+              FinAcc is more than just a company or business; it's a family and an emotion.
               As experts, we're dedicated to helping your business thrive.
             </p>
           </AnimatedSection>
@@ -62,19 +64,19 @@ const About = () => {
               <h2 className="heading-lg text-foreground mb-6">Our Story</h2>
               <div className="space-y-6 text-muted-foreground font-light leading-relaxed text-lg">
                 <p>
-                  FinAcc Outsourcing was founded in 2019 by two individuals who were 
-                  passionate about providing financial services. They started by freelancing 
-                  for UK accounting firms, and in 2023, they officially registered the 
+                  FinAcc Outsourcing was founded in 2019 by two individuals who were
+                  passionate about providing financial services. They started by freelancing
+                  for UK accounting firms, and in 2023, they officially registered the
                   company as an LLP with the Ministry of Corporate Affairs in India.
                 </p>
                 <p>
-                  We work with a team of experts across different departments such as 
-                  Business Consulting, Finance, Tax, Accounting, and Bookkeeping. We help 
-                  you understand your business dynamics, identify reasons behind challenges, 
+                  We work with a team of experts across different departments such as
+                  Business Consulting, Finance, Tax, Accounting, and Bookkeeping. We help
+                  you understand your business dynamics, identify reasons behind challenges,
                   and offer tailored advice to address them effectively.
                 </p>
                 <p>
-                  We don't see you as just clients; we see you as part of our family, 
+                  We don't see you as just clients; we see you as part of our family,
                   guiding you whenever and wherever needed.
                 </p>
               </div>
@@ -110,9 +112,9 @@ const About = () => {
               <Card variant="glass" className="h-full p-8">
                 <h3 className="heading-md text-foreground mb-4">Our Mission</h3>
                 <p className="text-muted-foreground font-light leading-relaxed text-lg">
-                  To provide advanced accounting services, knowledge process outsourcing 
-                  services, systems and processes in order to add value to our clients 
-                  business while remaining compliant to the laws of land by empowering 
+                  To provide advanced accounting services, knowledge process outsourcing
+                  services, systems and processes in order to add value to our clients
+                  business while remaining compliant to the laws of land by empowering
                   our staff to deliver such excellent services.
                 </p>
               </Card>
@@ -122,8 +124,8 @@ const About = () => {
               <Card variant="glass" className="h-full p-8">
                 <h3 className="heading-md text-foreground mb-4">Our Vision</h3>
                 <p className="text-muted-foreground font-light leading-relaxed text-lg">
-                  To ensure excellence, be a trusted partner of choice, providing 
-                  technology-enabled, value-driven one-stop solutions that drive our 
+                  To ensure excellence, be a trusted partner of choice, providing
+                  technology-enabled, value-driven one-stop solutions that drive our
                   clients business growth in the field of accounts and finance.
                 </p>
               </Card>
@@ -197,6 +199,18 @@ const About = () => {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          <AnimatedSection className="text-center mt-12">
+            <Link to="/team">
+              <Button
+                variant="ghost"
+                size="lg"
+                className="bg-transparent text-black border border-black hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
+              >
+                View Team
+              </Button>
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
     </Layout>

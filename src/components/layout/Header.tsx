@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
+  { name: "Our Team", href: "/team" },
   { name: "Services", href: "/services" },
   { name: "Case Studies", href: "/case-studies" },
   { name: "Security", href: "/security" },
@@ -35,11 +36,10 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
             ? "bg-background/80 backdrop-blur-lg shadow-soft py-3"
             : "bg-background py-5"
-        } border-b border-border`}
+          } border-b border-border`}
       >
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}
@@ -55,11 +55,10 @@ export function Header() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
-                  location.pathname === item.href
+                className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${location.pathname === item.href
                     ? "text-primary bg-primary/5"
                     : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -118,11 +117,10 @@ export function Header() {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`block px-4 py-3 text-lg font-medium transition-colors rounded-lg ${
-                        location.pathname === item.href
+                      className={`block px-4 py-3 text-lg font-medium transition-colors rounded-lg ${location.pathname === item.href
                           ? "text-primary bg-primary/5"
                           : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                      }`}
+                        }`}
                     >
                       {item.name}
                     </Link>

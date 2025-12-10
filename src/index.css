@@ -265,6 +265,23 @@
   }
 }
 
+/* Blog Content Styling */
+.blog-content h2 {
+  @apply heading-sm text-foreground mb-4 mt-8;
+}
+
+.blog-content p {
+  @apply text-muted-foreground font-light leading-relaxed mb-6;
+}
+
+.blog-content ul {
+  @apply list-disc list-inside space-y-3 text-muted-foreground font-light leading-relaxed mb-6 ml-4;
+}
+
+.blog-content li {
+  @apply text-muted-foreground font-light;
+}
+
 /* Animation utilities */
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;

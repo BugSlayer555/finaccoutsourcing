@@ -91,9 +91,11 @@ const Blog = () => {
                       {blogPosts[0].readTime}
                     </div>
                   </div>
-                  <Button variant="hero" className="w-fit">
-                    Read Article
-                    <ArrowRight size={16} weight="bold" />
+                  <Button variant="hero" className="w-fit" asChild>
+                    <Link to={`/blog/${blogPosts[0].id}`}>
+                      Read Article
+                      <ArrowRight size={16} weight="bold" />
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -112,7 +114,8 @@ const Blog = () => {
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.slice(1).map((post) => (
               <StaggerItem key={post.id}>
-                <Card variant="glass" className="h-full overflow-hidden group cursor-pointer">
+                <Link to={`/blog/${post.id}`}>
+                  <Card variant="glass" className="h-full overflow-hidden group cursor-pointer">
                   <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center relative overflow-hidden">
                     <div className="text-5xl font-bold text-primary/30">0{post.id}</div>
                     <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
@@ -135,7 +138,8 @@ const Blog = () => {
                       {post.date}
                     </div>
                   </CardHeader>
-                </Card>
+                  </Card>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>
