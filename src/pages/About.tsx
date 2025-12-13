@@ -49,8 +49,7 @@ const About = () => {
               An Extension of Your Office
             </h1>
             <p className="text-xl text-muted-foreground font-light leading-relaxed">
-              FinAcc is more than just a company or business; it's a family and an emotion.
-              As experts, we're dedicated to helping your business thrive.
+              At FinAcc, we’re more than just a service provider—we’re a dedicated family driven by a shared passion for your success. As a team of seasoned experts in financial advising, accounting, and consulting, we don't just process numbers; we integrate deeply with your business culture. We strive to be the invisible engine behind your growth, offering the reliability of an in-house team with the flexibility of outsourcing.
             </p>
           </AnimatedSection>
         </div>
@@ -64,10 +63,7 @@ const About = () => {
               <h2 className="heading-lg text-foreground mb-6">Our Story</h2>
               <div className="space-y-6 text-muted-foreground font-light leading-relaxed text-lg">
                 <p>
-                  FinAcc Outsourcing was founded in 2019 by two individuals who were
-                  passionate about providing financial services. They started by freelancing
-                  for UK accounting firms, and in 2023, they officially registered the
-                  company as an LLP with the Ministry of Corporate Affairs in India.
+                  FinAcc OutSourcings began in 2019 as a two‑person venture built on a shared vision of delivering top‑tier financial services. Starting with freelance work for UK accounting firms, we’ve grown steadily—and in 2023, we officially registered as an LLP. Today, we’re a trusted partner for businesses seeking more than transactional support: we’re your partners in growth.
                 </p>
                 <p>
                   We work with a team of experts across different departments such as

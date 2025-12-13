@@ -38,11 +38,23 @@ export function HeroSection() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-xl">
-                FinAcc is more than just a company; it's a family. As experts,
-                we're dedicated to helping your business thrive through
-                financial advising, accounting, bookkeeping, and consulting.
+              <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-xl mb-6">
+                FinAcc is more than a company-it’s a family. Founded by a team of finance professionals who believe that great numbers build great businesses, we’ve turned that belief into a full‑service practice that supports companies like yours at every stage.
               </p>
+              <ul className="space-y-2 mb-8 text-base text-muted-foreground font-light max-w-xl">
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                  Financial advising that drives strategic decisions
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                  Accurate accounting and bookkeeping you can trust
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                  Tailored consulting to streamline operations
+                </li>
+              </ul>
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>

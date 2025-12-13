@@ -25,7 +25,7 @@ const services = [
       "Limited company accounts",
       "Compliance with UK GAAP/FRS",
     ],
-    turnaround: "12-14 working days",
+    turnaround: "Within a Week",
     tools: ["Iris", "Xero", "Sage"],
   },
   {
@@ -38,7 +38,7 @@ const services = [
       "Regular financial updates",
       "MTD compliant records",
     ],
-    turnaround: "5 working days (regular)",
+    turnaround: "2-3 Working Days",
     tools: ["Xero", "QuickBooks", "Dext"],
   },
   {
@@ -51,7 +51,7 @@ const services = [
       "Cash flow forecasting",
       "KPI tracking",
     ],
-    turnaround: "7 working days",
+    turnaround: "3-4 Days",
     tools: ["Xero", "Sage", "Excel"],
   },
   {
@@ -64,7 +64,7 @@ const services = [
       "R&D tax relief claims",
       "Group relief calculations",
     ],
-    turnaround: "10 working days",
+    turnaround: "4-5 Working Days",
     tools: ["Taxfiler", "Capium"],
   },
   {
@@ -77,7 +77,7 @@ const services = [
       "MTD for VAT compliance",
       "EC Sales List preparation",
     ],
-    turnaround: "3-5 working days",
+    turnaround: "2-3 Working Days",
     tools: ["Xero", "Sage", "QuickBooks"],
   },
 ];
@@ -96,8 +96,7 @@ const Services = () => {
               Comprehensive Accounting Solutions
             </h1>
             <p className="text-xl text-muted-foreground font-light leading-relaxed">
-              End-to-end outsourcing services tailored for UK accounting practices. 
-              Reduce costs by 40-50% while maintaining quality.
+              End-to-end outsourcing services tailored specifically for UK accounting practices. From year-end accounts and bookkeeping to corporate tax and VAT, our expert team functions as an extension of your firm—helping you reduce operational costs by 40-50% while scaling your capacity and maintaining exceptional quality standards.
             </p>
           </AnimatedSection>
         </div>

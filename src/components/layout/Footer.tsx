@@ -5,6 +5,7 @@ import {
   MapPin,
   LinkedinLogo,
   TwitterLogo,
+  WhatsappLogo,
 } from "@phosphor-icons/react";
 
 const quickLinks = [
@@ -100,10 +101,10 @@ export function Footer() {
                   className="text-primary flex-shrink-0 mt-0.5"
                 />
                 <a
-                  href="mailto:hello@finaccoutsourcing.com"
+                  href="mailto:Info@finaccoutsourcings.com"
                   className="text-background/70 hover:text-primary transition-colors font-light"
                 >
-                  hello@finaccoutsourcing.com
+                  Info@finaccoutsourcings.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -112,10 +113,24 @@ export function Footer() {
                   className="text-primary flex-shrink-0 mt-0.5"
                 />
                 <a
-                  href="tel:+442081338875"
+                  href="tel:+917011701023"
                   className="text-background/70 hover:text-primary transition-colors font-light"
                 >
-                  +44 20 8133 8875
+                  +91 7011701023
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <WhatsappLogo
+                  size={20}
+                  className="text-primary flex-shrink-0 mt-0.5"
+                />
+                <a
+                  href="https://wa.me/917011701023"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-background/70 hover:text-primary transition-colors font-light"
+                >
+                  +91 7011701023
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -137,9 +152,8 @@ export function Footer() {
         <div className="mt-16 pt-8 border-t border-background/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-background/50 text-sm font-light">
-              © {new Date().getFullYear()} FinAcc Outsourcing. All rights
-              reserved.
-            </p>
+              © {new Date().getFullYear()} TaxTraid Consultants LLP (T.A Finacc OutSourcings
+              )            </p>
             <div className="flex gap-6">
               <a
                 href="#"

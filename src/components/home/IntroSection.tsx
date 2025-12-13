@@ -4,7 +4,7 @@ export function IntroSection() {
   return (
     <section className="section-padding bg-secondary">
       <div className="container-custom">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>
             <span className="text-primary font-semibold text-sm tracking-wide uppercase mb-4 block">
               About FinAcc
@@ -20,24 +20,13 @@ export function IntroSection() {
           <AnimatedSection delay={0.2}>
             <div className="space-y-6 text-muted-foreground font-light leading-relaxed text-lg">
               <p>
-                FinAcc is more than just a company or business; it's a family
-                and an emotion. As experts, we're dedicated to helping your
-                business thrive. Whether it's through financial advising,
-                accounting, bookkeeping, or consulting, we integrate ourselves
-                into your business to provide guidance and support.
+                At FinAcc, we’re more than just a company-we’re a family driven by a shared passion for empowering businesses. As a team of dedicated experts in financial advising, accounting, bookkeeping, and consulting, we dive deep into your business to help it thrive.
               </p>
               <p>
-                We work with a team of experts across different departments such
-                as Business Consulting, Finance, Tax, Accounting, and
-                Bookkeeping. We help you understand your business dynamics,
-                identify reasons behind challenges, and offer tailored advice to
-                address them effectively.
+                Our integrated approach means we don’t just offer services; we embed ourselves in your operations, working as an extension of your team. With specialists across Business Consulting, Finance, Tax, Accounting, and Bookkeeping, we dig into the numbers to uncover insights, identify opportunities, and tackle challenges head‑on. Our goal is simple: give you clarity, confidence, and actionable advice tailored to your unique goals.
               </p>
               <p>
-                A bit about our journey: FinAcc Outsourcing was founded in 2019
-                by two individuals who were passionate about providing financial
-                services. They started by freelancing for UK accounting firms,
-                and in 2023, they officially registered the company as an LLP.
+                FinAcc OutSourcings began in 2019 as a two‑person venture built on a shared vision of delivering top‑tier financial services. Starting with freelance work for UK accounting firms, we’ve grown steadily—and in 2023, we officially registered as an LLP. Today, we’re a trusted partner for businesses seeking more than transactional support: we’re your partners in growth.
               </p>
             </div>
           </AnimatedSection>

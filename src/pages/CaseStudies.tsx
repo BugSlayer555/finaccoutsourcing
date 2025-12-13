@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle, TrendUp, ArrowRight, Users, Clock, Target } from "@phosphor-icons/react";
 
 const caseStudy = {
-  title: "AB Accountancy Practice",
+  title: "KM Accountancy Practice",
   subtitle: "How a UK practice transformed their operations with FinAcc",
   profile: {
     structure: "Single Partner",
@@ -67,7 +67,7 @@ const CaseStudies = () => {
               {caseStudy.title}
             </h1>
             <p className="text-xl text-muted-foreground font-light leading-relaxed">
-              {caseStudy.subtitle}
+              See how KM Accountancy Practice, a growing UK firm, partnered with FinAcc to overcome capacity bottlenecks and staff turnover. By outsourcing routine compliance work, they freed up partner time, dramatically reduced costs, and unlocked organic growth—proving that the right partnership can transform a practice's trajectory.
             </p>
           </AnimatedSection>
         </div>

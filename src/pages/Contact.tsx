@@ -13,6 +13,7 @@ import {
   MapPin,
   Clock,
   PaperPlaneTilt,
+  WhatsappLogo,
 } from "@phosphor-icons/react";
 
 const Contact = () => {
@@ -21,16 +22,16 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     // Use local Express server for dev, Netlify function for production
     const isDev = import.meta.env.DEV;
-    const endpoint = isDev 
+    const endpoint = isDev
       ? "http://localhost:3001/api/send-email"
       : "/.netlify/functions/send-email";
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    
+
     const payload = {
       firstName: (formData.get("firstName") as string) ?? "",
       lastName: (formData.get("lastName") as string) ?? "",
@@ -70,7 +71,7 @@ const Contact = () => {
       console.error("Form submission error:", error);
       toast({
         title: "Message failed",
-        description: error.message || "Please try again, or email hello@finaccoutsourcing.com.",
+        description: error.message || "Please try again, or email Info@finaccoutsourcings.com.",
       });
     } finally {
       setIsSubmitting(false);
@@ -90,7 +91,7 @@ const Contact = () => {
               Let's Start a Conversation
             </h1>
             <p className="text-xl text-muted-foreground font-light leading-relaxed">
-              Book a 15-30 min discovery call for a complimentary trial of 8-10 hours 
+              Book a 15-30 min discovery call for a complimentary trial of 8-10 hours
               to test the water and give your firm wings of growth.
             </p>
           </AnimatedSection>
@@ -105,7 +106,7 @@ const Contact = () => {
             <AnimatedSection>
               <Card variant="glass" className="p-8">
                 <h2 className="heading-md text-foreground mb-6">Send a Message</h2>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -158,7 +159,7 @@ const Contact = () => {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+44 20 1234 5678"
+                      placeholder="+91 7011701023"
                       className="bg-background"
                     />
                   </div>
@@ -215,10 +216,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
                       <a
-                        href="mailto:hello@finaccoutsourcing.com"
+                        href="mailto:Info@finaccoutsourcings.com"
                         className="text-primary hover:underline"
                       >
-                        hello@finaccoutsourcing.com
+                        Info@finaccoutsourcings.com
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">
                         We respond within 24 hours
@@ -237,13 +238,37 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
                       <a
-                        href="tel:+442081338875"
+                        href="tel:+917011701023"
                         className="text-primary hover:underline"
                       >
-                        +44 20 8133 8875
+                        +91 7011701023
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">
                         Mon-Fri 9:00 AM - 6:00 PM GMT
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.25}>
+                <Card variant="glass" className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <WhatsappLogo size={24} className="text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">WhatsApp Us</h3>
+                      <a
+                        href="https://wa.me/917011701023"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        +91 7011701023
+                      </a>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Chat with us instantly
                       </p>
                     </div>
                   </div>
@@ -290,8 +315,8 @@ const Contact = () => {
                 <Card className="bg-foreground text-background p-6">
                   <h3 className="font-semibold mb-4">Free Trial Offer</h3>
                   <p className="text-background/80 font-light mb-4">
-                    Book a 15-30 min discovery call for a complimentary trial of 
-                    8-10 hours job to test the water and give your firm wings of growth 
+                    Book a 15-30 min discovery call for a complimentary trial of
+                    8-10 hours job to test the water and give your firm wings of growth
                     and guaranteed benefits!
                   </p>
                   <div className="flex flex-wrap gap-2">

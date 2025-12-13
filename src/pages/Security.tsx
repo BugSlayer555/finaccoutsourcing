@@ -90,8 +90,7 @@ const Security = () => {
               Your Data is Safe With Us
             </h1>
             <p className="text-xl text-background/70 font-light leading-relaxed">
-              We prioritize the security of your information and adhere to best-practice 
-              frameworks that encompass secure facilities and systems.
+              We prioritize the absolute security of your sensitive financial information. Our infrastructure is built on bank-grade encryption, secure FTP servers, and strict compliance with GDPR and GAPP guidelines. With multi-layered logical protection and enterprise-grade anti-virus systems, we ensure your data remains confidential and protected at all times.
             </p>
           </AnimatedSection>
         </div>
@@ -177,7 +176,7 @@ const Security = () => {
                 Our Security Policies
               </h2>
               <p className="text-muted-foreground font-light text-lg mb-8 leading-relaxed">
-                Beyond technical measures, we maintain strict policies and procedures 
+                Beyond technical measures, we maintain strict policies and procedures
                 to ensure the highest level of data protection.
               </p>
               <div className="space-y-4">
@@ -196,8 +195,8 @@ const Security = () => {
               <Card className="bg-foreground text-background p-8">
                 <h3 className="text-2xl font-bold mb-6">Security Commitment</h3>
                 <p className="text-background/80 font-light leading-relaxed mb-8">
-                  Our company is compliant with the Generally Accepted Privacy Principles 
-                  (GAPP), ensuring the complete security of your confidential data. We treat 
+                  Our company is compliant with the Generally Accepted Privacy Principles
+                  (GAPP), ensuring the complete security of your confidential data. We treat
                   your data with the same care and protection as we would our own.
                 </p>
                 <div className="flex flex-wrap gap-3">

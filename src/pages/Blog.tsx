@@ -58,7 +58,7 @@ const Blog = () => {
               Insights & Resources
             </h1>
             <p className="text-xl text-muted-foreground font-light leading-relaxed">
-              Expert insights on outsourcing, accounting best practices, and industry trends.
+              Stay ahead of the curve with our expert insights on the accounting landscape. We explore the strategic benefits of outsourcing, share tips on improving practice efficiency, and analyze the latest industry trends—providing you with the knowledge resources you need to lead your firm into the future.
             </p>
           </AnimatedSection>
         </div>
@@ -116,28 +116,28 @@ const Blog = () => {
               <StaggerItem key={post.id}>
                 <Link to={`/blog/${post.id}`}>
                   <Card variant="glass" className="h-full overflow-hidden group cursor-pointer">
-                  <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center relative overflow-hidden">
-                    <div className="text-5xl font-bold text-primary/30">0{post.id}</div>
-                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
-                  </div>
-                  <CardHeader className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
-                        {post.category}
-                      </span>
-                      <span className="text-xs text-muted-foreground">{post.readTime}</span>
+                    <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center relative overflow-hidden">
+                      <div className="text-5xl font-bold text-primary/30">0{post.id}</div>
+                      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
                     </div>
-                    <CardTitle className="text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                      {post.title}
-                    </CardTitle>
-                    <CardDescription className="line-clamp-3">
-                      {post.excerpt}
-                    </CardDescription>
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground pt-2">
-                      <Calendar size={14} />
-                      {post.date}
-                    </div>
-                  </CardHeader>
+                    <CardHeader className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                          {post.category}
+                        </span>
+                        <span className="text-xs text-muted-foreground">{post.readTime}</span>
+                      </div>
+                      <CardTitle className="text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                        {post.title}
+                      </CardTitle>
+                      <CardDescription className="line-clamp-3">
+                        {post.excerpt}
+                      </CardDescription>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground pt-2">
+                        <Calendar size={14} />
+                        {post.date}
+                      </div>
+                    </CardHeader>
                   </Card>
                 </Link>
               </StaggerItem>

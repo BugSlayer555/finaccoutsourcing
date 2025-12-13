@@ -33,7 +33,7 @@ export function CaseStudySection() {
 
             <AnimatedSection delay={0.1}>
               <h2 className="heading-lg text-foreground mb-4">
-                AB Accountancy Practice
+                KM Accountancy Practice
               </h2>
             </AnimatedSection>
 
