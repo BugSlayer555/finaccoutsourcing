@@ -2,13 +2,30 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/animated-section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "@phosphor-icons/react";
 import { teamMembers } from "@/data/teamData";
 
 const Team = () => {
     return (
         <Layout>
+            {/* Navigation */}
+            <section className="pt-24 pb-8 bg-secondary">
+                <div className="container-custom">
+                    <Link to="/about">
+                        <Button
+                            variant="ghost"
+                            className="mb-8 -ml-4 bg-transparent text-black hover:bg-primary hover:text-white transition-colors duration-300"
+                        >
+                            <ArrowLeft size={20} weight="bold" />
+                            Back to About
+                        </Button>
+                    </Link>
+                </div>
+            </section>
+
             {/* Hero */}
-            <section className="section-padding bg-secondary">
+            <section className="section-padding bg-secondary pt-0">
                 <div className="container-custom">
                     <AnimatedSection className="max-w-3xl">
                         <span className="text-primary font-semibold text-sm tracking-wide uppercase mb-4 block">

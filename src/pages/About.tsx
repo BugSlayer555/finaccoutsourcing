@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 import { Button } from "@/components/ui/button";
 import { Target, Eye, Heart, Users } from "@phosphor-icons/react";
 
+import { teamMembers } from "@/data/teamData";
+
 const values = [
   {
     icon: Heart,
@@ -28,12 +30,7 @@ const values = [
   },
 ];
 
-const team = [
-  { name: "Founder", role: "Managing Partner", initials: "FP" },
-  { name: "Co-Founder", role: "Operations Head", initials: "CF" },
-  { name: "Senior Accountant", role: "Team Lead", initials: "SA" },
-  { name: "Tax Specialist", role: "Senior Advisor", initials: "TS" },
-];
+const team = teamMembers.filter(member => member.isMain);
 
 const About = () => {
   return (
@@ -182,14 +179,24 @@ const About = () => {
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member) => (
-              <StaggerItem key={member.name}>
-                <Card variant="glass" className="text-center">
-                  <CardHeader className="space-y-4">
-                    <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                      <span className="text-2xl font-bold text-primary">{member.initials}</span>
+              <StaggerItem key={member.name} className="h-full">
+                <Card variant="glass" className="text-center h-full flex flex-col">
+                  <CardHeader className="space-y-4 flex-grow">
+                    <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto overflow-hidden">
+                      {member.image ? (
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-2xl font-bold text-primary">{member.initials}</span>
+                      )}
                     </div>
-                    <CardTitle className="text-foreground">{member.name}</CardTitle>
-                    <CardDescription>{member.role}</CardDescription>
+                    <div>
+                      <CardTitle className="text-foreground">{member.name}</CardTitle>
+                      <CardDescription className="mt-2">{member.role}</CardDescription>
+                    </div>
                   </CardHeader>
                 </Card>
               </StaggerItem>
