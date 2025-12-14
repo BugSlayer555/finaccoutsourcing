@@ -7,6 +7,7 @@ import {
   TwitterLogo,
   WhatsappLogo,
 } from "@phosphor-icons/react";
+import Logo from "../../assests/img/FinaccLogo.png";
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
@@ -33,9 +34,11 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <span className="text-2xl font-bold">
-                Fin<span className="text-primary">Acc</span>
-              </span>
+              <img
+                src={Logo}
+                alt="FinAcc Outsourcing"
+                className="h-12 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-background/70 font-light leading-relaxed mb-6">
               An extension of your office. Expert outsourcing accounting

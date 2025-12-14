@@ -22,11 +22,19 @@ export function Header() {
   const location = useLocation();
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -45,6 +53,7 @@ export function Header() {
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
+            <img src="/FinaccLogo.png" alt="FinAcc Logo" className="h-12 w-auto" />
             <span className="text-2xl font-bold text-foreground tracking-tight">
               Fin<span className="text-primary">Acc</span>
             </span>
@@ -103,9 +112,12 @@ export function Header() {
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-6 border-b border-border">
-                  <span className="text-xl font-bold text-foreground">
-                    Fin<span className="text-primary">Acc</span>
-                  </span>
+                  <Link to="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
+                    <img src="/FinaccLogo.png" alt="FinAcc Logo" className="h-10 w-auto" />
+                    <span className="text-xl font-bold text-foreground">
+                      Fin<span className="text-primary">Acc</span>
+                    </span>
+                  </Link>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2 text-foreground"

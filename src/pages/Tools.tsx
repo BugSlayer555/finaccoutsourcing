@@ -24,7 +24,7 @@ import taxfilerLogo from "@/assests/img/taxfiler.jpg";
 
 const tools = [
     { name: "Taxfiler", category: "Tax", image: taxfilerLogo },
-    { name: "VT Final Accounts", category: "Accounts", image: vtLogo },
+
     { name: "Iris", category: "Accounts", image: irisLogo },
     { name: "Digita", category: "Accounts", image: digitaLogo },
     { name: "BTC", category: "Tax", image: btcLogo },

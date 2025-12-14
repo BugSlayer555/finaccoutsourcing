@@ -7,7 +7,7 @@ const cardVariants = cva("rounded-xl transition-all duration-300", {
     variant: {
       default: "bg-card text-card-foreground border border-border shadow-card",
       glass:
-        "bg-foreground/[0.06] backdrop-blur-lg border border-foreground/[0.05] hover:bg-foreground/[0.08] hover:shadow-elevated hover:-translate-y-1",
+        "bg-foreground/[0.06] backdrop-blur-md border border-foreground/[0.05] hover:bg-foreground/[0.08] hover:shadow-elevated hover:-translate-y-1 will-change-transform",
       elevated: "bg-card text-card-foreground shadow-elevated",
       outline: "bg-transparent border border-border",
     },
@@ -19,7 +19,7 @@ const cardVariants = cva("rounded-xl transition-all duration-300", {
 
 export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof cardVariants> {}
+  VariantProps<typeof cardVariants> { }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant, ...props }, ref) => (
