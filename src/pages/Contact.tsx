@@ -23,11 +23,11 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Use local Express server for dev, Netlify function for production
+    // Use local Express server for dev, Render backend for production
     const isDev = import.meta.env.DEV;
     const endpoint = isDev
       ? "http://localhost:3001/api/send-email"
-      : "/.netlify/functions/send-email";
+      : "https://finacc-l9hj.onrender.com/api/send-email";
 
     const form = e.currentTarget;
     const formData = new FormData(form);
