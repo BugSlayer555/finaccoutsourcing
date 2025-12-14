@@ -33,12 +33,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-6">
+            <Link to="/" className="inline-flex items-center gap-3 mb-6">
               <img
                 src={Logo}
                 alt="FinAcc Outsourcing"
-                className="h-12 w-auto brightness-0 invert"
+                className="h-10 w-auto brightness-0 invert"
               />
+              <span className="text-2xl font-bold">
+                Fin<span className="text-primary">Acc</span>
+              </span>
             </Link>
             <p className="text-background/70 font-light leading-relaxed mb-6">
               An extension of your office. Expert outsourcing accounting
